@@ -50,5 +50,18 @@ public class Recipe {
 		this.count = count;
 	}
 	
+	public boolean isEmpty() {
+		return ProductList == null;
+	}
+	
+	public void addProduct(Product newproduct) {
+		if (isEmpty()) {
+			ProductList = newproduct;
+		}else {
+			newproduct.setNextProductName(ProductList);
+			ProductList = newproduct;
+		}
+		
+	}
 
 }
